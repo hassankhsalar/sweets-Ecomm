@@ -3,6 +3,7 @@ import HeroCarousel from "./components/HeroCarousel";
 import Categories from "./components/Categories";
 import ProductCollection from "./components/ProductCollection";
 import SignatureProducts from "./components/SignatureProducts";
+import CustomersGrid from "./components/CustomersGrid";
 
 export default function Home() {
   return (
@@ -29,6 +30,10 @@ export default function Home() {
 
       <div>
         <SignatureProducts/>
+      </div>
+
+      <div>
+        <CustomersGrid/>
       </div>
     </section>
   );
