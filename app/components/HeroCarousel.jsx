@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import c1 from ".././../public/c1.jpg";
@@ -74,32 +74,51 @@ export default function HeroCarousel() {
           }`}
         >
           {/* Single div with background image and overlay */}
-          <div 
+          <div
             className="relative w-full h-full bg-cover bg-center"
-            style={{ 
+            style={{
               backgroundImage: `url(${slide.image.src})`,
             }}
           >
             {/* Dark overlay for better text readability */}
             <div className="absolute inset-0 "></div>
-            
+
             {/* Content overlay */}
             <div className="absolute inset-0 flex items-center p-16">
               <div className="text-white max-w-xl">
-                <p className="text-yellow-400 tracking-widest mb-4 text-sm">
+                <p className="text-yellow-400 tracking-widest mb-4 text-md font-bold">
                   {slide.subtitle}
                 </p>
 
-                <h1 className="text-5xl font-bold leading-tight whitespace-pre-line mb-6">
+                <h1 className="text-5xl font-extrabold leading-tight whitespace-pre-line mb-6">
                   {slide.title}
                 </h1>
 
-                <p className="text-gray-200 mb-8 max-w-md">
+                <p className="text-gray-200 mb-8 max-w-md text-xl font-normal">
                   {slide.description}
                 </p>
 
-                <button className="bg-red-500 hover:bg-red-600 transition px-6 py-3 rounded-full font-semibold shadow-lg">
-                  {slide.buttonText}
+                <button className="relative bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-8 py-3 rounded-full font-bold text-lg tracking-wide shadow-xl hover:shadow-2xl hover:shadow-red-500/50 transform hover:scale-105 active:scale-95 transition-all duration-300 ease-out group overflow-hidden">
+                  {/* Continuous shine effect */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/70 to-transparent -skew-x-12 animate-shine"></span>
+
+                  {/* Button text with icon */}
+                  <span className="relative flex items-center gap-2">
+                    {slide.buttonText}
+                    <svg
+                      className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </span>
                 </button>
               </div>
             </div>

@@ -58,35 +58,39 @@ export default function Categories() {
 
       <div className="relative max-w-7xl mx-auto px-6 text-center">
         {/* Title */}
-        <h2 className="text-4xl font-bold text-red-800">Our Categories</h2>
+        <h2 className="text-5xl font-extrabold text-red-900">Our Categories</h2>
 
-        <div className="w-16 h-1 bg-red-600 mx-auto mt-3 mb-4 rounded-full"></div>
+        <div className="w-16 h-1 bg-gradient-to-r from-red-900 to-red-600 mx-auto mt-3 mb-4 rounded-full"></div>
 
-        <p className="text-gray-600 mb-12">
+        <p className="text-gray-400 text-xl font-medium mb-12">
           Explore our premium collection of handcrafted sweets and desserts
         </p>
 
         {/* Categories Grid */}
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8">
           {categories.map((category) => (
             <div
               key={category.id}
               onClick={() => handleNavigation(`/category/${category.slug}`)}
-              className="relative w-42 h-42 rounded-full overflow-hidden cursor-pointer group transition-all duration-300 hover:ring-4 hover:ring-red-700 hover:ring-offset-1"
+              className="relative w-42 h-42 rounded-full overflow-hidden cursor-pointer group transition-all duration-300 hover:ring-4 hover:ring-red-700 hover:ring-offset-1
+              ring-4 ring-gray-200 ring-offset-1"
             >
               <Image
                 src={category.image}
                 alt={category.name}
-                width={168}
-                height={168}
-                className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                width={268}
+                height={268}
+                className="w-full h-full object-cover group-hover:scale-120 transition duration-500"
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center rounded-full group-hover:bg-black/50 transition">
-                <span className="text-white text-lg font-semibold">
+              <div className="absolute inset-0 bg-black/20 flex flex-col items-center justify-center rounded-full group-hover:bg-black/30 transition-all duration-300">
+                <p className="text-white text-lg font-semibold">
                   {category.name}
-                </span>
+                </p>
+                <p className="text-white text-lg font-medium mt-1 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                  5 items
+                </p>
               </div>
             </div>
           ))}
