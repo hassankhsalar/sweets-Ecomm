@@ -4,6 +4,7 @@ import Categories from "./components/Categories";
 import ProductCollection from "./components/ProductCollection";
 import SignatureProducts from "./components/SignatureProducts";
 import CustomersGrid from "./components/CustomersGrid";
+import AISignatureProducts from "./components/AISignatureProducts";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
       </div>
 
       <div>
-        <SignatureProducts/>
+        <AISignatureProducts/>
       </div>
 
       <div>

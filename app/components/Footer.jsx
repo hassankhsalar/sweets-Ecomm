@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link';
 import React from 'react';
 
 /**
@@ -51,24 +52,16 @@ const Footer = () => {
           gap: '2rem',
         }}
       >
-        {/* Column 1: Logo / Brand */}
-        <div style={{ flex: '1 1 200px' }}>
-          <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', fontWeight: 'bold' }}>
-            Your Brand
-          </h3>
-          <p style={{ opacity: 0.9, lineHeight: 1.6 }}>
-            Crafting digital experiences with a touch of red.
-          </p>
-        </div>
+       
 
         {/* Column 2: Quick Links */}
         <div style={{ flex: '1 1 160px' }}>
           <h4 style={{ fontSize: '1.2rem', marginBottom: '1rem', fontWeight: 600 }}>Links</h4>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             <li style={{ marginBottom: '0.5rem' }}>
-              <a href="/" style={{ color: '#fff', textDecoration: 'none', opacity: 0.9, hover: { opacity: 1 } }}>
+              <Link href="/" style={{ color: '#fff', textDecoration: 'none', opacity: 0.9, hover: { opacity: 1 } }}>
                 Home
-              </a>
+              </Link>
             </li>
             <li style={{ marginBottom: '0.5rem' }}>
               <a href="/about" style={{ color: '#fff', textDecoration: 'none', opacity: 0.9 }}>

@@ -21,19 +21,34 @@ const Navbar = () => {
 
   return (
     <>
-      {/* top red navpart - outside sticky */}
+      {/* top red navpart */}
       <div
         className="h-9 w-full bg-gradient-to-r from-red-900/50 to-red-900/50, url('/bg.png') bg-repeat-x bg-[length:370px_auto] bg-center"
         style={{
           backgroundImage: `linear-gradient(to right, rgba(157, 29, 29, 0.85), rgba(157, 29, 29, 0.85)), url('/bg.png')`,
         }}
       >
-        <div className="px-7 max-w-7xl mx-auto flex justify-between items-center text-base font-medium">
+        <div className="px-7 max-w-7xl mx-auto flex justify-between items-center text-base font-medium text-white">
           {/* left top buttons */}
           <div className="flex items-center gap-2">
-            <button>About Us</button>
-            <button>All Outlets</button>
-            <button>Contact Us</button>
+            <Link
+              href="/AboutUs"
+              className="hover:scale-105 transition-transform duration-300 ease-in-out inline-block"
+            >
+              About Us
+            </Link>
+            <Link
+              className="hover:scale-105 transition-transform duration-300 ease-in-out inline-block"
+              href="/AllOutlets"
+            >
+              All Outlets
+            </Link>
+            <Link
+              className="hover:scale-105 transition-transform duration-200 ease-in-out inline-block"
+              href="/ContactPage"
+            >
+              Contact Us
+            </Link>
           </div>
           {/* middle red part */}
           <div className="bg-red-600 w-3/12 h-9 rounded-b-full"></div>
@@ -55,7 +70,9 @@ const Navbar = () => {
         {/* middle navpart */}
         <div className="flex h-30 max-w-7xl items-center justify-between w-full relative px-6 mx-auto">
           {/* logo */}
-          <img src="/logo.png" alt="logo" className="w-[80px]" />
+          <Link href="/">
+            <img src="/logo.png" alt="logo" className="w-[80px]" />
+          </Link>
 
           {/* nav links */}
           <ul className="items-center gap-[20px] text-[1rem] text-[#424242] md:flex hidden">
@@ -70,14 +87,14 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <div className="flex items-center gap-[10px]">
-            <button className="flex gap-2 bg-red-500 px-4 py-3 rounded-xl font-semibold cursor-pointer">
+          <div className="flex items-center gap-[10px] text-white">
+            <button className="flex gap-2 bg-red-500 px-4 py-3 rounded-xl font-semibold cursor-pointer hover:bg-red-700">
               <ReceiptText className="text-[1.6rem] text-white" />
               Track Order
             </button>
-            <button className="flex bg-red-900 py-2 px-4 rounded-xl">
-              <ShoppingCart className="text-[1.6rem] text-[#424242] dark:text-[#abc2d3] cursor-pointer hover:text-[#3B9DF8] transition-all duration-500" />
-              0
+            <button className="flex bg-red-900 py-2 px-4 rounded-xl text-white hover:text-red-500  transition-all">
+              <ShoppingCart className="text-[1.6rem]  cursor-pointer" />
+               0
             </button>
 
             <CiMenuFries
@@ -115,7 +132,7 @@ const Navbar = () => {
         </div>
 
         {/* bottom navpart */}
-        <div className="flex max-w-7xl justify-between w-full px-4 h-8 mx-auto border-t border-gray-100">
+        <div className="flex max-w-7xl justify-between w-full px-4 pb-2 h-8 mx-auto border-t border-gray-100">
           {/* categories */}
           <div className="flex items-center justify-center gap-3">
             <Link
