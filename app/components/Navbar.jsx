@@ -12,6 +12,7 @@ import { CgIfDesign } from "react-icons/cg";
 import { FaCubesStacked } from "react-icons/fa6";
 import { Mail, Phone, ReceiptText, ShoppingCart, Truck } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   const [mobileAboutUsOpen, setMobileAboutUsOpen] = useState(false);
@@ -108,13 +109,18 @@ const Navbar = () => {
       {/* bottom navpart */}
       <div className="flex  max-w-7xl justify-between w-full px-4 h-8">
         {/* categories */}
-        <div className="flex items-center justify-center gap-2">
-          <button className="text-red-900 flex gap-1 items-center justify-center"><Image width={24} height={24} src='/categories/TokDoi.png'/>Special Sweets</button>
-          <button className="text-red-900 flex gap-1 items-center justify-center"><Image width={24} height={24} src='/categories/traditionalsweets.webp'/>Laddu</button>
-          <button className="text-red-900 flex gap-1 items-center justify-center"><Image width={24} height={24} src='/categories/curd.png'/>Curd</button>
-          <button className="text-red-900 flex gap-1 items-center justify-center"><Image width={24} height={24} src='/categories/ts.jpg'/>Traditional Sweets</button>
-          <button className="text-red-900 flex gap-1 items-center justify-center"><Image width={24} height={24} src='/categories/Dryitem.png'/>Dry item</button>
-          <button className="text-red-900 flex gap-1 items-center justify-center"><Image width={24} height={24} src='/categories/Shondesh.png'/>Shondesh</button>
+        <div className="flex items-center justify-center gap-3">
+          <Link href='/categories/specialSweets' className="text-red-900 flex gap-1 items-center justify-center"><Image alt="Special Sweets" width={24} height={24} src='/categories/TokDoi.png'/>Special Sweets</Link>
+
+          <Link href='/categories/Laddu'  className="text-red-900 flex gap-1 items-center justify-center"><Image alt="Laddu" width={24} height={24} src='/categories/traditionalsweets.webp'/>Laddu</Link>
+
+          <Link href='/categories/Curd'  className="text-red-900 flex gap-1 items-center justify-center"><Image alt="Curd" width={24} height={24} src='/categories/curd.png'/>Curd</Link>
+
+          <Link href='/categories/TraditionalSweets'  className="text-red-900 flex gap-1 items-center justify-center"><Image alt="Traditional Sweets" width={24} height={24} src='/categories/ts.jpg'/>Traditional Sweets</Link>
+          
+          <Link href='/categories/DryItem'  className="text-red-900 flex gap-1 items-center justify-center"><Image alt="Dry item" width={24} height={24} src='/categories/Dryitem.png'/>Dry item</Link>
+
+          <Link href='/categories/Shondesh'  className="text-red-900 flex gap-1 items-center justify-center"><Image alt="Shondesh" width={24} height={24} src='/categories/Shondesh.png'/>Shondesh</Link>
           
         </div>
         {/* right text */}

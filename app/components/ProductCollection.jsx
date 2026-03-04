@@ -71,7 +71,7 @@ export default function ProductCollection() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto py-16 px-6 lg:px-20 bg-gradient-to-b from-gray-50 to-white">
+    <section className="max-w-7xl mx-auto py-16 px-6 lg:px-20 bg-transparent">
       {/* Header Section */}
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-12">
         <div>

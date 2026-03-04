@@ -25,7 +25,16 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
         <Navbar/>
+        <section 
+              className="relative min-h-screen bg-size-[1000px] bg-repeat "
+              style={{ 
+                backgroundImage: `
+                  linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)),
+                  url('/bg.png')
+                `
+              }}>
         {children}
+        </section>
         <Footer/>
       </body>
     </html>

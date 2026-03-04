@@ -7,15 +7,7 @@ import CustomersGrid from "./components/CustomersGrid";
 
 export default function Home() {
   return (
-    <section 
-      className="relative min-h-screen bg-cover bg-center"
-      style={{ 
-        backgroundImage: `
-          linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)),
-          url('/bg.png')
-        `
-      }}
-    >
+    <section>
       <div className="pt-10 px-4">
         <HeroCarousel/>
       </div>
