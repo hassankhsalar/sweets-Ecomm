@@ -134,10 +134,10 @@ const Navbar = () => {
         {/* bottom navpart */}
         <div className="flex max-w-7xl justify-between w-full px-4 pb-2 h-8 mx-auto border-t border-gray-100">
           {/* categories */}
-          <div className="flex items-center justify-center gap-3">
+          <div className="flex items-center justify-center gap-5">
             <Link
               href="/categories/specialSweets"
-              className="text-red-900 flex gap-1 items-center justify-center"
+              className="text-red-900 flex gap-1 items-center justify-center hover:-translate-y-1 hover:scale-105 hover:shadow-lg transition-all duration-300"
             >
               <Image
                 alt="Special Sweets"
@@ -150,7 +150,7 @@ const Navbar = () => {
 
             <Link
               href="/categories/Laddu"
-              className="text-red-900 flex gap-1 items-center justify-center"
+              className="text-red-900 flex gap-1 items-center justify-center hover:-translate-y-1 hover:scale-105 hover:shadow-lg transition-all duration-300"
             >
               <Image
                 alt="Laddu"
@@ -163,7 +163,7 @@ const Navbar = () => {
 
             <Link
               href="/categories/Curd"
-              className="text-red-900 flex gap-1 items-center justify-center"
+              className="text-red-900 flex gap-1 items-center justify-center hover:-translate-y-1 hover:scale-105 hover:shadow-lg transition-all duration-300"
             >
               <Image
                 alt="Curd"
@@ -176,7 +176,7 @@ const Navbar = () => {
 
             <Link
               href="/categories/TraditionalSweets"
-              className="text-red-900 flex gap-1 items-center justify-center"
+              className="text-red-900 flex gap-1 items-center justify-center hover:-translate-y-1 hover:scale-105 hover:shadow-lg transition-all duration-300"
             >
               <Image
                 alt="Traditional Sweets"
@@ -189,7 +189,7 @@ const Navbar = () => {
 
             <Link
               href="/categories/DryItem"
-              className="text-red-900 flex gap-1 items-center justify-center"
+              className="text-red-900 flex gap-1 items-center justify-center hover:-translate-y-1 hover:scale-105 hover:shadow-lg transition-all duration-300"
             >
               <Image
                 alt="Dry item"
@@ -202,7 +202,7 @@ const Navbar = () => {
 
             <Link
               href="/categories/Shondesh"
-              className="text-red-900 flex gap-1 items-center justify-center"
+              className="text-red-900 flex gap-1 items-center justify-center hover:-translate-y-1 hover:scale-105 hover:shadow-lg transition-all duration-300"
             >
               <Image
                 alt="Shondesh"

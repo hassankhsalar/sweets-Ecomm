@@ -105,7 +105,7 @@ export default function AISignatureProducts() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             <span className="absolute top-4 left-4 bg-white/90 text-maroon-dark px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-              <span className="w-2 h-2 bg-gold rounded-full" />
+              <span className="w-2 h-2 bg-yellow-600 rounded-full" />
               {signatureItems[0].name}
             </span>
           </div>
@@ -118,7 +118,7 @@ export default function AISignatureProducts() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             <span className="absolute top-4 left-4 bg-white/90 text-maroon-dark px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-              <span className="w-2 h-2 bg-gold rounded-full" />
+              <span className="w-2 h-2 bg-orange-600 rounded-full" />
               {signatureItems[1].name}
             </span>
           </div>
@@ -131,7 +131,7 @@ export default function AISignatureProducts() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             <span className="absolute top-4 left-4 bg-white/90 text-maroon-dark px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-              <span className="w-2 h-2 bg-gold rounded-full" />
+              <span className="w-2 h-2 bg-red-600 rounded-full" />
               {signatureItems[2].name}
             </span>
           </div>
@@ -144,7 +144,7 @@ export default function AISignatureProducts() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             <span className="absolute top-4 left-4 bg-white/90 text-maroon-dark px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-              <span className="w-2 h-2 bg-gold rounded-full" />
+              <span className="w-2 h-2 bg-pink-600 rounded-full" />
               {signatureItems[3].name}
             </span>
           </div>
@@ -158,7 +158,7 @@ export default function AISignatureProducts() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             <span className="absolute top-4 left-4 bg-white/90 text-maroon-dark px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-              <span className="w-2 h-2 bg-burgundy rounded-full" />
+              <span className="w-2 h-2 bg-yellow-600 rounded-full" />
               {signatureItems[4].name}
             </span>
           </div>
@@ -171,7 +171,7 @@ export default function AISignatureProducts() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             <span className="absolute top-4 left-4 bg-white/90 text-maroon-dark px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-              <span className="w-2 h-2 bg-gold rounded-full" />
+              <span className="w-2 h-2 bg-red-400 rounded-full" />
               {signatureItems[5].name}
             </span>
           </div>
@@ -184,7 +184,7 @@ export default function AISignatureProducts() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             <span className="absolute top-4 left-4 bg-white/90 text-maroon-dark px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-              <span className="w-2 h-2 bg-gold rounded-full" />
+              <span className="w-2 h-2 bg-red-400 rounded-full" />
               {signatureItems[6].name}
             </span>
           </div>
@@ -206,7 +206,7 @@ export default function AISignatureProducts() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             <span className="absolute top-4 left-4 bg-white/90 text-maroon-dark px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-              <span className="w-2 h-2 bg-gold rounded-full" />
+              <span className="w-2 h-2 bg-yellow-600 rounded-full" />
               {signatureItems[8].name}
             </span>
           </div>
@@ -227,7 +227,7 @@ export default function AISignatureProducts() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             <span className="absolute top-4 left-4 bg-white/90 text-maroon-dark px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-              <span className="w-2 h-2 bg-burgundy rounded-full" />
+              <span className="w-2 h-2 bg-red-400 rounded-full" />
               {signatureItems[9].name}
             </span>
           </div>
@@ -240,7 +240,7 @@ export default function AISignatureProducts() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             <span className="absolute top-4 left-4 bg-white/90 text-maroon-dark px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-              <span className="w-2 h-2 bg-gold rounded-full" />
+              <span className="w-2 h-2 bg-yellow-600 rounded-full" />
               {signatureItems[7].name}
             </span>
           </div>
@@ -254,7 +254,7 @@ export default function AISignatureProducts() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             <span className="absolute top-4 left-4 bg-white/90 text-maroon-dark px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-              <span className="w-2 h-2 bg-burgundy rounded-full" />
+              <span className="w-2 h-2 bg-red-400 rounded-full" />
               {signatureItems[10].name}
             </span>
           </div>
@@ -267,7 +267,7 @@ export default function AISignatureProducts() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             <span className="absolute top-4 left-4 bg-white/90 text-maroon-dark px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-              <span className="w-2 h-2 bg-gold rounded-full" />
+              <span className="w-2 h-2 bg-red-400 rounded-full" />
               {signatureItems[11].name}
             </span>
           </div>
@@ -281,7 +281,7 @@ export default function AISignatureProducts() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             <span className="absolute top-4 left-4 bg-white/90 text-maroon-dark px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-              <span className="w-2 h-2 bg-gold rounded-full" />
+              <span className="w-2 h-2 bg-yellow-600 rounded-full" />
               {signatureItems[12].name}
             </span>
           </div>
