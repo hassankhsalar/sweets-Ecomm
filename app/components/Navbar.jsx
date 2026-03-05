@@ -28,7 +28,7 @@ const Navbar = () => {
           backgroundImage: `linear-gradient(to right, rgba(157, 29, 29, 0.85), rgba(157, 29, 29, 0.85)), url('/bg.png')`,
         }}
       >
-        <div className="px-7 max-w-7xl mx-auto flex justify-between items-center text-base font-medium text-white">
+        <div className="px-7 max-w-7xl mx-auto flex justify-between items-center text-xs md:text-base font-medium text-white">
           {/* left top buttons */}
           <div className="flex items-center gap-2">
             <Link
@@ -57,7 +57,7 @@ const Navbar = () => {
             <p className="flex justify-center items-center gap-1">
               <Phone size={16} fill="currentColor" /> +8801726798844
             </p>
-            <p className="flex justify-center items-center gap-1">
+            <p className="flex justify-center items-center gap-1 hidden sm:flex">
               <Mail size={16} />
               testmail@gmail.com
             </p>
@@ -93,12 +93,11 @@ const Navbar = () => {
               Track Order
             </button>
             <button className="flex bg-red-900 py-2 px-4 rounded-xl text-white hover:text-red-500  transition-all">
-              <ShoppingCart className="text-[1.6rem]  cursor-pointer" />
-               0
+              <ShoppingCart className="text-[1.6rem]  cursor-pointer" />0
             </button>
 
             <CiMenuFries
-              className="text-[1.6rem] dark:text-[#abc2d3] text-[#424242]c cursor-pointer md:hidden flex"
+              className="text-[1.6rem] text-gray-800 cursor-pointer md:hidden flex"
               onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
             />
           </div>
@@ -109,35 +108,30 @@ const Navbar = () => {
               mobileSidebarOpen
                 ? "translate-x-0 opacity-100 z-20"
                 : "translate-x-[200px] opacity-0 z-[-1]"
-            } md:hidden bg-white boxShadow p-4 text-center absolute dark:bg-slate-700 top-[55px] right-0 sm:w-[300px] w-full rounded-md transition-all duration-300`}
+            } md:hidden bg-white boxShadow p-4 text-center absolute dark:bg-slate-700 top-20 right-0 sm:w-[300px] w-full rounded-md transition-all duration-300`}
           >
             <ul className="items-start gap-[20px] text-[1rem] text-gray-600 flex flex-col">
               <li className="hover:text-[#3B9DF8] dark:text-[#abc2d3] group transition-all duration-500 cursor-pointer capitalize flex items-center gap-[10px]">
                 Home
               </li>
 
-              <li
-                onClick={() => setMobileAboutUsOpen(!mobileAboutUsOpen)}
-                className="hover:text-[#3B9DF8] group dark:text-[#abc2d3] transition-all duration-500 cursor-pointer capitalize flex items-center gap-[10px]"
-              >
-                About Us
-                <IoIosArrowDown
-                  className={`${
-                    mobileAboutUsOpen ? "rotate-[180deg]" : "rotate-0"
-                  } text-gray-600 group-hover:text-[#3B9DF8] dark:text-[#abc2d3] transition-all duration-300`}
-                />
+              <li className="hover:text-[#3B9DF8] dark:text-[#abc2d3] group transition-all duration-500 cursor-pointer capitalize flex items-center gap-[10px]">
+                Home
+              </li>
+              <li className="hover:text-[#3B9DF8] dark:text-[#abc2d3] group transition-all duration-500 cursor-pointer capitalize flex items-center gap-[10px]">
+                Home
               </li>
             </ul>
           </aside>
         </div>
 
         {/* bottom navpart */}
-        <div className="flex max-w-7xl justify-between w-full px-4 pb-2 h-8 mx-auto border-t border-gray-100">
-          {/* categories */}
-          <div className="flex items-center justify-center gap-5">
+        <div className="flex max-w-7xl justify-between w-full px-4 pb-2 h-auto mx-auto border-t border-gray-100">
+          {/* categories - horizontally scrollable on mobile */}
+          <div className="flex items-center gap-5 overflow-x-auto scrollbar-hide pb-2 md:pb-0 md:overflow-visible md:flex-wrap md:justify-center">
             <Link
               href="/categories/specialSweets"
-              className="text-red-900 flex gap-1 items-center justify-center hover:-translate-y-1 hover:scale-105 hover:shadow-lg transition-all duration-300"
+              className="text-red-900 flex gap-1 items-center justify-center hover:-translate-y-1 hover:scale-105 hover:shadow-lg transition-all duration-300 whitespace-nowrap"
             >
               <Image
                 alt="Special Sweets"
@@ -150,7 +144,7 @@ const Navbar = () => {
 
             <Link
               href="/categories/Laddu"
-              className="text-red-900 flex gap-1 items-center justify-center hover:-translate-y-1 hover:scale-105 hover:shadow-lg transition-all duration-300"
+              className="text-red-900 flex gap-1 items-center justify-center hover:-translate-y-1 hover:scale-105 hover:shadow-lg transition-all duration-300 whitespace-nowrap"
             >
               <Image
                 alt="Laddu"
@@ -163,7 +157,7 @@ const Navbar = () => {
 
             <Link
               href="/categories/Curd"
-              className="text-red-900 flex gap-1 items-center justify-center hover:-translate-y-1 hover:scale-105 hover:shadow-lg transition-all duration-300"
+              className="text-red-900 flex gap-1 items-center justify-center hover:-translate-y-1 hover:scale-105 hover:shadow-lg transition-all duration-300 whitespace-nowrap"
             >
               <Image
                 alt="Curd"
@@ -176,7 +170,7 @@ const Navbar = () => {
 
             <Link
               href="/categories/TraditionalSweets"
-              className="text-red-900 flex gap-1 items-center justify-center hover:-translate-y-1 hover:scale-105 hover:shadow-lg transition-all duration-300"
+              className="text-red-900 flex gap-1 items-center justify-center hover:-translate-y-1 hover:scale-105 hover:shadow-lg transition-all duration-300 whitespace-nowrap"
             >
               <Image
                 alt="Traditional Sweets"
@@ -189,7 +183,7 @@ const Navbar = () => {
 
             <Link
               href="/categories/DryItem"
-              className="text-red-900 flex gap-1 items-center justify-center hover:-translate-y-1 hover:scale-105 hover:shadow-lg transition-all duration-300"
+              className="text-red-900 flex gap-1 items-center justify-center hover:-translate-y-1 hover:scale-105 hover:shadow-lg transition-all duration-300 whitespace-nowrap"
             >
               <Image
                 alt="Dry item"
@@ -202,7 +196,7 @@ const Navbar = () => {
 
             <Link
               href="/categories/Shondesh"
-              className="text-red-900 flex gap-1 items-center justify-center hover:-translate-y-1 hover:scale-105 hover:shadow-lg transition-all duration-300"
+              className="text-red-900 flex gap-1 items-center justify-center hover:-translate-y-1 hover:scale-105 hover:shadow-lg transition-all duration-300 whitespace-nowrap"
             >
               <Image
                 alt="Shondesh"
@@ -213,11 +207,17 @@ const Navbar = () => {
               Shondesh
             </Link>
           </div>
-          {/* right text */}
-          <p className="flex justify-center items-center text-red-600">
+
+          {/* right text - hidden on mobile, visible on desktop */}
+          <p className="hidden md:flex justify-center items-center text-red-600">
             <Truck /> Free shipping for all orders of 2000 BDT
           </p>
         </div>
+
+        {/* Free shipping message for mobile - appears below scrollable categories */}
+        <p className="flex md:hidden justify-center items-center text-red-600 text-sm mt-2 pb-2">
+          <Truck /> Free shipping for orders above 2000 BDT
+        </p>
       </header>
     </>
   );
