@@ -1,17 +1,25 @@
+import getPrisma from '@/lib/prisma'
 import Image from "next/image";
 
-const customers = [
-  { id: 1, src: "/partners/1.png", alt: "Customer 1" },
-  { id: 2, src: "/partners/1.png", alt: "Customer 2" },
-  { id: 3, src: "/partners/1.png", alt: "Customer 3" },
-  { id: 4, src: "/partners/1.png", alt: "Customer 4" },
-  { id: 5, src: "/partners/1.png", alt: "Customer 5" },
-  { id: 6, src: "/partners/1.png", alt: "Customer 6" },
-  { id: 7, src: "/partners/1.png", alt: "Customer 7" },
-  { id: 8, src: "/partners/1.png", alt: "Customer 8" },
-];
+const ADMIN_PANEL_URL = 'http://localhost:3001'
 
-export default function CustomersGrid() {
+export default async function CustomersGrid() {
+  const prisma = await getPrisma() // Lazy load prisma
+  
+  const customers = await prisma.valuedCustomer.findMany({
+    where: {
+      isActive: true,
+      deletedAt: false
+    },
+    orderBy: {
+      createdAt: 'desc'
+    }
+  })
+
+  if (!customers || customers.length === 0) {
+    return null
+  }
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
@@ -25,17 +33,27 @@ export default function CustomersGrid() {
               key={customer.id}
               className="flex justify-center items-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition"
             >
-              <Image
-                src={customer.src}
-                alt={customer.alt}
-                width={180}
-                height={100}
-                className="object-contain"
-              />
+              {customer.image ? (
+                <img
+                  src={`${ADMIN_PANEL_URL}${customer.image}`}
+                  alt={`Customer ${customer.id}`}
+                  width={180}
+                  height={100}
+                  className="object-contain"
+                  onError={(e) => {
+                    e.target.style.display = 'none'
+                    e.target.parentElement.innerHTML += '<div class="w-[180px] h-[100px] bg-gray-200 flex items-center justify-center text-gray-500">Image Error</div>'
+                  }}
+                />
+              ) : (
+                <div className="w-[180px] h-[100px] bg-gray-200 flex items-center justify-center text-gray-500">
+                  No Image
+                </div>
+              )}
             </div>
           ))}
         </div>
       </div>
     </section>
-  );
+  )
 }

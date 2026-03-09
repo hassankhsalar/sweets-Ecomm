@@ -1,8 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["ext.same-assets.com"],
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '3001',
+        pathname: '/uploads/**',
+      },
+    ],
   },
-};
+}
 
-export default nextConfig;
+// For .js files, you can use either:
+export default nextConfig;  // ES Module syntax
+// or
+// module.exports = nextConfig;  // CommonJS syntax
