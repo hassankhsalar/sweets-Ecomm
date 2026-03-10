@@ -1,24 +1,32 @@
-import { prisma } from '@/lib/prisma'
-import { NextResponse } from 'next/server'
+const API_BASE_URL = 'http://localhost:3001/api'
 
-export async function GET() {
-  try {
-    const customers = await prisma.valuedCustomer.findMany({
-      where: {
-        isActive: true,
-        deletedAt: false
-      },
-      orderBy: {
-        createdAt: 'desc'
-      }
-    })
+async function fetchAPI(endpoint, options = {}) {
+  const res = await fetch(`${API_BASE_URL}${endpoint}`, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    ...options,
+  })
 
-    return NextResponse.json(customers)
-  } catch (error) {
-    console.error('Error fetching valued customers:', error)
-    return NextResponse.json(
-      { error: 'Failed to fetch customers' },
-      { status: 500 }
-    )
+  if (!res.ok) {
+    throw new Error(`API call failed: ${res.statusText}`)
   }
+
+  return res.json()
+}
+
+export const api = {
+  // Valued Customers
+  getValuedCustomers: () => fetchAPI('/valued-customers'),
+  
+  // Products
+  getProducts: (params) => fetchAPI(`/products?${new URLSearchParams(params)}`),
+  getProduct: (id) => fetchAPI(`/products/${id}`),
+  
+  // Categories
+  getCategories: () => fetchAPI('/food-categories'),
+  
+  // Home page data
+  getHomeBanners: () => fetchAPI('/home-banners'),
+  getProductCollections: () => fetchAPI('/product-collections'),
 }

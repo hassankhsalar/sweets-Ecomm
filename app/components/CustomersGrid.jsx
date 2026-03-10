@@ -1,20 +1,48 @@
-import getPrisma from '@/lib/prisma'
-import Image from "next/image";
+'use client'
+
+import { api } from '@/lib/api'
+import Image from "next/image"
+import { useEffect, useState } from 'react'
 
 const ADMIN_PANEL_URL = 'http://localhost:3001'
 
-export default async function CustomersGrid() {
-  const prisma = await getPrisma() // Lazy load prisma
-  
-  const customers = await prisma.valuedCustomer.findMany({
-    where: {
-      isActive: true,
-      deletedAt: false
-    },
-    orderBy: {
-      createdAt: 'desc'
+export default function CustomersGrid() {
+  const [customers, setCustomers] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    async function fetchCustomers() {
+      try {
+        const response = await api.getValuedCustomers()
+        setCustomers(response.customers || [])
+      } catch (err) {
+        setError(err.message)
+      } finally {
+        setLoading(false)
+      }
     }
-  })
+    
+    fetchCustomers()
+  }, [])
+
+  if (loading) {
+    return (
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          Loading customers...
+        </div>
+      </section>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="text-red-500 text-center p-4">
+        Error loading customers: {error}
+      </div>
+    )
+  }
 
   if (!customers || customers.length === 0) {
     return null
