@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ShoppingCart, Eye } from "lucide-react";
 import { api } from '@/lib/api'
+import { useCart } from "../context/CartContext";
 
 const ADMIN_PANEL_URL = 'http://localhost:3001'
 
@@ -35,6 +36,7 @@ export default function ProductCollection() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { addToCart } = useCart()
 
   useEffect(() => {
     async function fetchProducts() {
@@ -55,15 +57,16 @@ export default function ProductCollection() {
   }, [activeCategory]);
 
   const handleAddToCart = (product, e) => {
-    e.stopPropagation();
-    console.log("Added to cart:", product);
+  e.stopPropagation()
+  addToCart(product, 1)
   };
 
   const handleViewDetails = (product, e) => {
     e.stopPropagation();
     console.log("View details:", product);
   };
-
+  
+  
   if (loading) {
     return (
       <section className="max-w-7xl mx-auto py-16 px-6 lg:px-20">
@@ -143,7 +146,7 @@ export default function ProductCollection() {
                       src={getImageUrl(product.image)}
                       alt={product.name}
                       fill
-                      className="object-contain p-6 group-hover:scale-110 transition-transform duration-700 ease-out"
+                      className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                       onError={(e) => {
                         console.error('Image failed to load:', {
                           product: product.name,

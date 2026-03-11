@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ShoppingCart, Eye } from "lucide-react";
 import { api } from '@/lib/api'
+import { useCart } from "@/app/context/CartContext";
 
 const ADMIN_PANEL_URL = 'http://localhost:3001'
 
@@ -21,12 +22,18 @@ export default function CategoryClient({ categoryName, slug }) {
   const [products, setProducts] = useState([])
   const [category, setCategory] = useState(null)
   const [loading, setLoading] = useState(true)
+  const { addToCart } = useCart()
   const [hoveredProduct, setHoveredProduct] = useState(null)
   const [pagination, setPagination] = useState({
     page: 1,
     totalPages: 1,
     totalCount: 0
   })
+
+  const handleAddToCart = (product, e) => {
+  e.stopPropagation()
+  addToCart(product, 1)
+}
 
   useEffect(() => {
     async function fetchData() {

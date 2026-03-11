@@ -67,7 +67,7 @@ export default function CustomersGrid() {
                   alt={`Customer ${customer.id}`}
                   width={180}
                   height={100}
-                  className="object-contain"
+                  className="object-cover"
                   onError={(e) => {
                     e.target.style.display = 'none'
                     e.target.parentElement.innerHTML += '<div class="w-[180px] h-[100px] bg-gray-200 flex items-center justify-center text-gray-500">Image Error</div>'
